@@ -3,6 +3,7 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './watch.module.css';
+import { addToHistory } from '@/hooks/useHistory';
 
 export default function Watch() {
   const { id } = useParams();
@@ -14,7 +15,9 @@ export default function Watch() {
       .then(res => res.json())
       .then(data => {
         setRecommendations(data.filter(v => v.id !== id));
-        setVideo(data.find(v => v.id === id));
+        const found = data.find(v => v.id === id);
+        setVideo(found);
+        if (found) addToHistory(found);
       });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [id]);

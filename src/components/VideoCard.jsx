@@ -1,7 +1,17 @@
+"use client";
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { getHistory } from '@/hooks/useHistory';
 import styles from './VideoCard.module.css';
 
 export default function VideoCard({ video }) {
+  const [watched, setWatched] = useState(false);
+
+  useEffect(() => {
+    const history = getHistory();
+    setWatched(history.some(v => v.id === video.id));
+  }, [video.id]);
+
   return (
     <Link href={`/watch/${video.id}`} className={styles.card}>
       <div className={styles.thumbContainer}>
@@ -11,6 +21,7 @@ export default function VideoCard({ video }) {
           alt="" 
         />
         <span className={styles.duration}>{video.duration}</span>
+        {watched && <span className={styles.watchedBadge}>✓ Watched</span>}
       </div>
       <div className={styles.details}>
         <div className={styles.avatar}>MB</div>

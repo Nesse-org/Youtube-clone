@@ -87,3 +87,14 @@
       transform: translateY(0);
     }
   }
+
+  .watchedBadge {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}

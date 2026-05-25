@@ -9,7 +9,7 @@ export default function Sidebar() {
       <div className={styles.item}>🔔 <span className={styles.text}>Subscriptions</span></div>
       <hr className={styles.hr} />
       <div className={styles.item}>📚 <span className={styles.text}>Library</span></div>
-      <div className={styles.item}>⏳ <span className={styles.text}>History</span></div>
+      <Link href="/history" className={styles.item}>⏳ <span className={styles.text}>History</span></Link>
     </aside>
   );
 }
