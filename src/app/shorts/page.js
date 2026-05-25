@@ -17,7 +17,7 @@ export default function Shorts() {
         <div key={short.id} className={styles.shortWrapper}>
           <div className={styles.videoBox}>
             <iframe
-              src={`https://www.youtube.com/embed/${short.videoId}?autoplay=0&controls=0&loop=1&playlist=${short.videoId}`}
+              src={`https://www.youtube.com/embed/${short.videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${short.videoId}&modestbranding=1&rel=0`}
               title={short.title}
               className={styles.iframe}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
