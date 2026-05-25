@@ -1,0 +1,76 @@
+.viewport {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+  }
+  
+  .card {
+    background-color: #0f0f0f;
+    border: 1px solid #272727;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .logo {
+    color: #ff0000;
+    font-size: 36px;
+  }
+  
+  .title {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 12px 0 4px 0;
+  }
+  
+  .sub {
+    font-size: 13px;
+    color: #aaa;
+    margin: 0;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .field {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #303030;
+    padding: 12px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  .field:focus {
+    border-color: #1c62b9;
+    outline: none;
+  }
+  
+  .btn {
+    background-color: #1c62b9;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  .btn:hover {
+    background-color: #1a56a3;
+  }

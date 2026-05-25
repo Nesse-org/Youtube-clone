@@ -1,0 +1,29 @@
+.body {
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    font-family: Roboto, Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .wrapper {
+    display: flex;
+  }
+  
+  .main {
+    flex: 1;
+    padding: 16px;
+    margin-left: 72px;
+    min-height: calc(100vh - 56px);
+    box-sizing: border-box;
+    transition: margin-left 0.2s;
+  }
+  
+  @media (min-width: 768px) {
+    .main { margin-left: 240px; padding: 24px; }
+  }
+  
+  @media (max-width: 480px) {
+    .main { margin-left: 0; padding-bottom: 70px; }
+  }

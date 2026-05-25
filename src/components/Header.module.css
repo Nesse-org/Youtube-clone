@@ -1,0 +1,135 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0f0f0f;
+    padding: 0 16px;
+    height: 56px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .burger {
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .icon {
+    color: #ff0000;
+    font-size: 22px;
+  }
+  
+  .tag {
+    font-size: 10px;
+    color: #aaa;
+    align-self: flex-start;
+    margin-top: 2px;
+  }
+  
+  .center {
+    display: flex;
+    flex: 0 1 500px;
+    margin: 0 16px;
+  }
+  
+  .input {
+    width: 100%;
+    background-color: #121212;
+    border: 1px solid #303030;
+    border-radius: 40px 0 0 40px;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  
+  .input:focus {
+    border-color: #1c62b9;
+  }
+  
+  .searchBtn {
+    background-color: #222;
+    border: 1px solid #303030;
+    border-left: none;
+    border-radius: 0 40px 40px 0;
+    padding: 0 20px;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .loginLink {
+    color: #3ea6ff;
+    border: 1px solid #303030;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .loginLink:hover {
+    background-color: rgba(62, 166, 255, 0.1);
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #333;
+  }
+  
+  .logoutBtn {
+    background-color: #272727;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .logoutBtn:hover {
+    background-color: #3f3f3f;
+  }
+  
+  @media (min-width: 768px) {
+    .burger { display: block; }
+  }
+  
+  @media (max-width: 480px) {
+    .center { display: none; }
+  }
