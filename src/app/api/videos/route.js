@@ -23,6 +23,20 @@ const mrBeastVideos = [
   { id: "20", title: "I Adopted Every Dog In A Shelter", views: "180M views", time: "3 years ago", duration: "16:18", videoId: "YQHsXMglC9A" }
 ];
 
-export async function GET() {
+const mrBeastShorts = [
+  { id: "s1", title: "Giving Away $10,000 For Every Step!", likes: "12M", videoId: "nx3Z7gN8N0E" },
+  { id: "s2", title: "World's Sharpest Knife VS Apple!", likes: "8.5M", videoId: "2XyH_G7Yn_M" },
+  { id: "s3", title: "I Filled My Friend's House With Slime!", likes: "15M", videoId: "K_v6wM9_Aas" },
+  { id: "s4", title: "Can 100 Layers Of Cardboard Stop A Bullet?", likes: "9.1M", videoId: "D83d6r_MvA4" },
+  { id: "s5", title: "Surviving The World's Hardest Obby!", likes: "14M", videoId: "tV_ZgGzY8xQ" }
+];
+
+export async function GET(req) {
+  const { searchParams } = new URL(req.url);
+  const type = searchParams.get('type');
+  
+  if (type === 'shorts') {
+    return NextResponse.json(mrBeastShorts);
+  }
   return NextResponse.json(mrBeastVideos);
 }
