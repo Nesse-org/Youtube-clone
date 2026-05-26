@@ -30,3 +30,26 @@
   .dark-theme { --bg: #0f0f0f; --text: #ffffff; }
 .light-theme { --bg: #ffffff; --text: #000000; }
 body { background-color: var(--bg) !important; color: var(--text) !important; transition: background 0.3s, color 0.3s; }
+.offlineBanner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #cc0000;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 9999;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
