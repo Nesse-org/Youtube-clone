@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
   const [darkMode, setDarkMode] = useState(true);
 
   return (
-    <html lang="en">
+    <html lang="en" style={{ colorScheme: darkMode ? 'dark' : 'light' }}>
       <body className={`${styles.body} ${darkMode ? 'dark-theme' : 'light-theme'}`}>
         <OfflineNotifier />
         <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
