@@ -179,3 +179,117 @@
     .recThumb { width: 168px; height: 94px; }
     .recTitle { font-size: 14px; }
   }
+  .likeActive {
+    background-color: #065fd4;
+    color: #ffffff;
+  }
+  
+  .subscribed {
+    background-color: #065fd4;
+    color: #ffffff;
+    cursor: default;
+  }
+  
+  .commentsSection {
+    margin-top: 24px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 16px;
+  }
+  
+  .commentsTitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  
+  .commentInputRow {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .commentAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #065fd4;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  
+  .commentAvatarGray {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #606060;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  
+  .commentInput {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    padding: 6px 2px;
+    background: transparent;
+  }
+  
+  .commentSubmitBtn {
+    background-color: #065fd4;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 7px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: background-color 0.2s;
+  }
+  
+  .commentSubmitBtnDisabled {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 7px 16px;
+    cursor: default;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  
+  .commentsList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .commentItem {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .commentUserName {
+    font-weight: 700;
+    font-size: 13px;
+    margin: 0 0 3px;
+  }
+  
+  .commentText {
+    font-size: 14px;
+    margin: 0;
+    color: #0f0f0f;
+  }

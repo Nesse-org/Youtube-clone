@@ -27,3 +27,6 @@
   @media (max-width: 480px) {
     .main { margin-left: 0; padding-bottom: 70px; }
   }
+  .dark-theme { --bg: #0f0f0f; --text: #ffffff; }
+.light-theme { --bg: #ffffff; --text: #000000; }
+body { background-color: var(--bg) !important; color: var(--text) !important; transition: background 0.3s, color 0.3s; }
