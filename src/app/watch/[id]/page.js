@@ -19,6 +19,31 @@ export default function Watch() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [id]);
 
+  const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(4800000);
+  const [subscribed, setSubscribed] = useState(false);
+  const [comment, setComment] = useState('');
+  const [comments, setComments] = useState([
+    { id: 1, user: 'Alex T.', text: 'This video is absolutely amazing! 🔥' },
+    { id: 2, user: 'Sara M.', text: 'MrBeast never disappoints, love it! ❤️' },
+  ]);
+
+  const handleLike = () => {
+    setLikeCount(prev => liked ? prev - 1 : prev + 1);
+    setLiked(prev => !prev);
+  };
+
+  const handleSubscribe = () => {
+    setSubscribed(prev => !prev);
+  };
+
+  const handleCommentSubmit = () => {
+    const trimmed = comment.trim();
+    if (!trimmed) return;
+    setComments(prev => [{ id: Date.now(), user: 'You', text: trimmed }, ...prev]);
+    setComment('');
+  };
+
   if (!video) return <div className={styles.loading}>⚡ Loading Stream...</div>;
 
   return (
@@ -41,15 +66,60 @@ export default function Watch() {
               <p className={styles.name}>MrBeast ✔</p>
               <p className={styles.subs}>310M subscribers</p>
             </div>
-            <button className={styles.subBtn}>Subscribe</button>
+            <button
+              className={`${styles.subBtn} ${subscribed ? styles.subscribed : ''}`}
+              onClick={handleSubscribe}
+            >
+              {subscribed ? '✔ Subscribed' : 'Subscribe'}
+            </button>
           </div>
           <div className={styles.actions}>
-            <button className={styles.like}>👍 4.8M | 👎</button>
+            <button
+              className={`${styles.like} ${liked ? styles.likeActive : ''}`}
+              onClick={handleLike}
+            >
+              👍 {likeCount >= 1000000 ? (likeCount / 1000000).toFixed(1) + 'M' : likeCount.toLocaleString()} | 👎
+            </button>
           </div>
         </div>
         <div className={styles.descBox}>
           <strong>{video.views} • {video.time}</strong>
           <p>Official Next.js Premium Frame Architecture deployment for Demo Day exhibition.</p>
+        </div>
+
+        <div className={styles.commentsSection}>
+          <h3 className={styles.commentsTitle}>💬 {comments.length} Comments</h3>
+          <div className={styles.commentInputRow}>
+            <div className={styles.commentAvatar}>You</div>
+            <input
+              type="text"
+              className={styles.commentInput}
+              value={comment}
+              onChange={e => setComment(e.target.value)}
+              onKeyDown={e => e.key === 'Enter' && handleCommentSubmit()}
+              placeholder="Add a comment..."
+            />
+            <button
+              className={comment.trim() ? styles.commentSubmitBtn : styles.commentSubmitBtnDisabled}
+              onClick={handleCommentSubmit}
+              disabled={!comment.trim()}
+            >
+              Comment
+            </button>
+          </div>
+          <div className={styles.commentsList}>
+            {comments.map(c => (
+              <div key={c.id} className={styles.commentItem}>
+                <div className={c.user === 'You' ? styles.commentAvatar : styles.commentAvatarGray}>
+                  {c.user === 'You' ? 'You' : c.user.charAt(0)}
+                </div>
+                <div>
+                  <p className={styles.commentUserName}>{c.user}</p>
+                  <p className={styles.commentText}>{c.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
